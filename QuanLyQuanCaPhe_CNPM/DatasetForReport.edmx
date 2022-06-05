@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QuanLyQuanCaPheModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLyQuanCaPhe.dbo.DoanhThu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DoanhThu">
+          <Key>
+            <PropertyRef Name="TenMon" />
+          </Key>
+          <Property Name="TenMon" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="TongSL" Type="int" />
+          <Property Name="DonGia" Type="int" />
+          <Property Name="Thang" Type="int" />
+          <Property Name="Nam" Type="int" />
+          <Property Name="ThanhTien" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLyQuanCaPhe.dbo.HOADON' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="MaPhieu" />
+            <PropertyRef Name="MaMon" />
+            <PropertyRef Name="TenMon" />
+          </Key>
+          <Property Name="MaPhieu" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="NgayTao" Type="date" />
+          <Property Name="MaBan" Type="nchar" MaxLength="20" />
+          <Property Name="MaMon" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenMon" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="DVT" Type="nchar" MaxLength="20" />
+          <Property Name="SoLuong" Type="int" />
+          <Property Name="DonGia" Type="int" />
+          <Property Name="ThanhTien" Type="int" />
+          <Property Name="HoTen" Type="nchar" MaxLength="40" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QuanLyQuanCaPhe.dbo.TINHLUONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TINHLUONG">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="HoTen" Type="nchar" MaxLength="40" />
+          <Property Name="Thang" Type="int" />
+          <Property Name="Nam" Type="int" />
+          <Property Name="TongSoCa" Type="int" />
+          <Property Name="LuongCoBan" Type="int" />
+          <Property Name="Luong" Type="int" />
+        </EntityType>
+        <EntityContainer Name="QuanLyQuanCaPheModelStoreContainer">
+          <EntitySet Name="DoanhThu" EntityType="Self.DoanhThu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DoanhThu].[TenMon] AS [TenMon], 
+    [DoanhThu].[TongSL] AS [TongSL], 
+    [DoanhThu].[DonGia] AS [DonGia], 
+    [DoanhThu].[Thang] AS [Thang], 
+    [DoanhThu].[Nam] AS [Nam], 
+    [DoanhThu].[ThanhTien] AS [ThanhTien]
+    FROM [dbo].[DoanhThu] AS [DoanhThu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="HOADON" EntityType="Self.HOADON" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HOADON].[MaPhieu] AS [MaPhieu], 
+    [HOADON].[NgayTao] AS [NgayTao], 
+    [HOADON].[MaBan] AS [MaBan], 
+    [HOADON].[MaMon] AS [MaMon], 
+    [HOADON].[TenMon] AS [TenMon], 
+    [HOADON].[DVT] AS [DVT], 
+    [HOADON].[SoLuong] AS [SoLuong], 
+    [HOADON].[DonGia] AS [DonGia], 
+    [HOADON].[ThanhTien] AS [ThanhTien], 
+    [HOADON].[HoTen] AS [HoTen]
+    FROM [dbo].[HOADON] AS [HOADON]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TINHLUONG" EntityType="Self.TINHLUONG" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TINHLUONG].[MaNV] AS [MaNV], 
+    [TINHLUONG].[HoTen] AS [HoTen], 
+    [TINHLUONG].[Thang] AS [Thang], 
+    [TINHLUONG].[Nam] AS [Nam], 
+    [TINHLUONG].[TongSoCa] AS [TongSoCa], 
+    [TINHLUONG].[LuongCoBan] AS [LuongCoBan], 
+    [TINHLUONG].[Luong] AS [Luong]
+    FROM [dbo].[TINHLUONG] AS [TINHLUONG]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyQuanCaPheModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DoanhThu">
+          <Key>
+            <PropertyRef Name="TenMon" />
+          </Key>
+          <Property Name="TenMon" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TongSL" Type="Int32" />
+          <Property Name="DonGia" Type="Int32" />
+          <Property Name="Thang" Type="Int32" />
+          <Property Name="Nam" Type="Int32" />
+          <Property Name="ThanhTien" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="QuanLyQuanCaPheEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DoanhThus" EntityType="Self.DoanhThu" />
+          <EntitySet Name="HOADONs" EntityType="QuanLyQuanCaPheModel.HOADON" />
+          <EntitySet Name="TINHLUONGs" EntityType="QuanLyQuanCaPheModel.TINHLUONG" />
+        </EntityContainer>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="MaPhieu" />
+            <PropertyRef Name="MaMon" />
+            <PropertyRef Name="TenMon" />
+          </Key>
+          <Property Name="MaPhieu" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="NgayTao" Type="DateTime" Precision="0" />
+          <Property Name="MaBan" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="MaMon" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="TenMon" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="DVT" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="SoLuong" Type="Int32" />
+          <Property Name="DonGia" Type="Int32" />
+          <Property Name="ThanhTien" Type="Int32" />
+          <Property Name="HoTen" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TINHLUONG">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="Thang" Type="Int32" />
+          <Property Name="Nam" Type="Int32" />
+          <Property Name="TongSoCa" Type="Int32" />
+          <Property Name="LuongCoBan" Type="Int32" />
+          <Property Name="Luong" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyQuanCaPheModelStoreContainer" CdmEntityContainer="QuanLyQuanCaPheEntities2">
+          <EntitySetMapping Name="DoanhThus">
+            <EntityTypeMapping TypeName="QuanLyQuanCaPheModel.DoanhThu">
+              <MappingFragment StoreEntitySet="DoanhThu">
+                <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+                <ScalarProperty Name="TongSL" ColumnName="TongSL" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="Thang" ColumnName="Thang" />
+                <ScalarProperty Name="Nam" ColumnName="Nam" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOADONs">
+            <EntityTypeMapping TypeName="QuanLyQuanCaPheModel.HOADON">
+              <MappingFragment StoreEntitySet="HOADON">
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="DVT" ColumnName="DVT" />
+                <ScalarProperty Name="TenMon" ColumnName="TenMon" />
+                <ScalarProperty Name="MaMon" ColumnName="MaMon" />
+                <ScalarProperty Name="MaBan" ColumnName="MaBan" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TINHLUONGs">
+            <EntityTypeMapping TypeName="QuanLyQuanCaPheModel.TINHLUONG">
+              <MappingFragment StoreEntitySet="TINHLUONG">
+                <ScalarProperty Name="Luong" ColumnName="Luong" />
+                <ScalarProperty Name="LuongCoBan" ColumnName="LuongCoBan" />
+                <ScalarProperty Name="TongSoCa" ColumnName="TongSoCa" />
+                <ScalarProperty Name="Nam" ColumnName="Nam" />
+                <ScalarProperty Name="Thang" ColumnName="Thang" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
