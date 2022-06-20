@@ -127,7 +127,6 @@
             this.strIP,
             this.barToggleSwitchItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 41;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsTouch.AffectOnlyRibbon = true;
@@ -143,7 +142,7 @@
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.barChotCa);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.strIP);
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
-            this.ribbonControl1.Size = new System.Drawing.Size(1598, 203);
+            this.ribbonControl1.Size = new System.Drawing.Size(1174, 160);
             this.ribbonControl1.MouseHover += new System.EventHandler(this.ribbonControl1_MouseHover);
             // 
             // btnDangXuat
@@ -363,9 +362,7 @@
             // 
             // barToggleSwitchItem1
             // 
-            this.barToggleSwitchItem1.BindableChecked = true;
             this.barToggleSwitchItem1.Caption = "Bật/Tắt Server";
-            this.barToggleSwitchItem1.Checked = true;
             this.barToggleSwitchItem1.Id = 40;
             this.barToggleSwitchItem1.Name = "barToggleSwitchItem1";
             this.barToggleSwitchItem1.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barToggleSwitchItem1_CheckedChanged);
@@ -477,13 +474,12 @@
             // 
             // frHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1598, 897);
+            this.ClientSize = new System.Drawing.Size(1174, 609);
             this.Controls.Add(this.ribbonControl1);
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frHome";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

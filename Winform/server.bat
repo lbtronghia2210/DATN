@@ -1,3 +1,3 @@
-D:
-cd D:\KLTN_LAST_27_07\KLTN\QLQA-master\QLQA-master\QLQA-master
+E:
+cd E:\DATNN\DATN\Mobile App
 node server.js

@@ -108,7 +108,7 @@ namespace QuanLyQuanCaPhe_CNPM.BS_Layer
         public void startServer(string name)
         {
             Process p = new Process();
-            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Normal;
             p.StartInfo.FileName = name;
             p.Start();
         }

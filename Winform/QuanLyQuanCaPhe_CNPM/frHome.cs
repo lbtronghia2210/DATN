@@ -407,9 +407,13 @@ namespace QuanLyQuanCaPhe_CNPM
 
             if (barToggleSwitchItem1.Checked == true)
             {
-                if (File.Exists("server.bat"))
+                if (File.Exists(@"E:\DATNN\DATN\Winform\server.bat"))
                 {
-                    BLDN.startServer("server.bat");
+                    BLDN.startServer(@"E:\DATNN\DATN\Winform\server.bat");
+                }
+                else
+                {
+                    MessageBox.Show("Không có file start server !!");
                 }
             }
             else
